@@ -4,6 +4,7 @@ import "./App.css";
 import FeatureList from "./Feature/FeatureList"
 import Header from './Header'
 import Cart from './Cart/Cart'
+import FEATURES from './Store'
 
 class App extends Component {
   state = {
@@ -36,7 +37,6 @@ class App extends Component {
   }
 
   render() {
-    const { features } = this.props;
     const { selected } = this.state;
 
     return (
@@ -44,7 +44,7 @@ class App extends Component {
         <Header/>
         <main>
           <FeatureList
-            features={features}
+            features={FEATURES}
             selected={selected}
             updateFeature={(feature, newValue) =>
               this.updateFeature(feature, newValue)
